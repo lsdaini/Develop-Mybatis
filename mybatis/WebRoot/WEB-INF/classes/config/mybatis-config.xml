@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- <properties resource="jdbc.properties">
+  		propertie还可以设置一些属性名和属性值
+  		<property name="jdbc.driver" value=""></property>
+  	</properties> -->
+  	
+	<!-- 全局配置参数<settings></settings> -->
+  	
+	<!-- 定义别名 -->
+	<typeAliases>
+	<!-- 定义单个别名
+  		type:类型的路径   alias:别名
+  		<typeAlias type="net.luis.pojo.User" alias="User"></typeAlias>-->
+  		<!-- 批量定义别名 
+  		name:指定包名，mybatis自动扫描包中的pojo类，别名就是类名（首字母大写或小写）
+  		<package name="net.luis.pojo"/>-->
+  		
+		<typeAlias alias="User" type="net.luis.model.User" />
+	</typeAliases>
+	
+	<!-- 类型处理器：mybatis通过typeHandlers完成对jdbc类型和Java类型的转换 -->
+  	<typeHandlers></typeHandlers>
+	
+	<!-- 实体接口映射资源 ( mapping 文件路径配置 )-->
+	<!--说明：如果xxMapper.xml配置文件放在和xxMapper.java统一目录下，mappers也可以省略，
+	因为org.mybatis.spring.mapper.MapperFactoryBean默认会去查找与xxMapper.java相同目录和名称的xxMapper.xml-->
+	<mappers>
+		<!-- 通过 resource方法一次加载单个映射文件--> 
+		<mapper resource="net/luis/mapper/userMapper.xml" />
+		
+		<!-- 通过 mapper接口加载单个映射文件
+		        遵循规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在同一个目录下，
+		        前提：使用的是mapper代理方法
+		<mapper class="net.luis.mapper.UserMapper" />-->
+        <!-- 批量加载映射文件 
+                      遵循规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在同一个目录下，
+		 前提：使用的是mapper代理方法
+        <package name="net.luis.mapper" />   
+        -->
+	</mappers>
+
+</configuration>  
