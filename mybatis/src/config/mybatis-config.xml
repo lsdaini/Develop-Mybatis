@@ -3,9 +3,8 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-	<!-- <properties resource="jdbc.properties">
-  		propertie还可以设置一些属性名和属性值
-  		<property name="jdbc.driver" value=""></property>
+	<!-- <properties resource="jdbc.properties"> propertie还可以设置一些属性名和属性值
+  		 <property name="jdbc.driver" value=""></property>
   	</properties> -->
   	
 	<!-- 全局配置参数<settings></settings> -->
@@ -37,7 +36,7 @@
 		        前提：使用的是mapper代理方法
 		<mapper class="net.luis.mapper.UserMapper" />-->
         <!-- 批量加载映射文件 
-                      遵循规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在同一个目录下，
+                         遵循规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在同一个目录下，
 		 前提：使用的是mapper代理方法
         <package name="net.luis.mapper" />   
         -->
